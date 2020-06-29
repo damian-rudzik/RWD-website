@@ -1,0 +1,29 @@
+$primary-color: #222;
+$secondary-color: #ff555f;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+
+@mixin media {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@function set-text-color($color) {
+    @if (lightness($color) > 40%) {
+        @return #000;
+    } @else {
+        @return #fff;
+    };
+}
+
